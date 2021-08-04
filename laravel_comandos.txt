@@ -1,0 +1,19 @@
+/*Inicia o versionamento do github*/
+git log
+git remote add origin https://github.com/marquinhos2701/larafood.git
+git remote
+git push origin master
+
+/*Site Adminlte Template que facilita o uso de layout no Laravel*/
+https://github.com/jeroennoten/Laravel-AdminLTE/wiki
+/*Prepara a Instalação do Adminlte*/
+composer require jeroennoten/laravel-adminlte
+/*Mostra os comandos do Git para verificar se o Adminlte foi instalado*/
+php artisan
+/*Instala o Adminlte*/
+php artisan adminlte:install
+/*Finaliza/Publica o Adminlte*/
+php artisan vendor:publish --provider="JeroenNoten\LaravelAdminLte\AdminLteServiceProvider" --tag=views
+
+/*Validações de campos - Cria a classe de requests - arquivo criado StoreUpdateNome em /app/Http/Requests
+php artisan make:request StoreUpdateNometabela
