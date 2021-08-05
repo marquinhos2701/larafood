@@ -7,7 +7,7 @@
         <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Dashboard</a></li>        
         <li class="breadcrumb-item active"><a href="{{ route('plans.index') }}" class="active">Planos</a></li>        
     </ol>
-    <h1>Planos: <a href="{{ route('plans.create') }}" class="btn btn-dark">Adicionar<i class="fal fa-user-plus"></i></a></h1>
+    <h1>Planos: <a href="{{ route('plans.create') }}" class="btn btn-dark">Adicionar<i class="fas fa-user-plus"></i></a></h1>
 @stop
 
 @section('content')

@@ -5,9 +5,22 @@ use App\Http\Controllers\Admin\{
     DetailPlanController,
     PlanController
 };
+use App\Http\Controllers\Admin\ACL\PermissionController;
+use App\Http\Controllers\Admin\ACL\ProfileController;
 
 Route::prefix('admin')->group(function(){
 
+    /**
+     * Routes Permissions
+     */  
+    Route::any('permissions/search', [PermissionController::class, 'search'])->name('permissions.search');
+    Route::resource('permissions', PermissionController::class);
+
+    /**
+     * Routes Profiles
+     */    
+    Route::any('profiles/search', [ProfileController::class, 'search'])->name('profiles.search');
+    Route::resource('profiles', ProfileController::class);
 
     /**
      * Routes Details Plans

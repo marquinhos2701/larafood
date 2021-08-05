@@ -15,5 +15,13 @@ php artisan adminlte:install
 /*Finaliza/Publica o Adminlte*/
 php artisan vendor:publish --provider="JeroenNoten\LaravelAdminLte\AdminLteServiceProvider" --tag=views
 
-/*Validações de campos - Cria a classe de requests - arquivo criado StoreUpdateNome em /app/Http/Requests
+################## Passos basicos criar um CRUD
+/*Cria o Model e a Migration - Model tem que ser singular Tabelas geradas no plural
+php artisan make:model Profile -m
+/*Cria as tabelas no banco através da Migration
+php artisan migrate
+/*Cria a Controller com todas classes de CRUD
+php artisan make:controller Admin\\ACL\\ProfileController --resource
+/*Cria a classe de requests - Validações de campos - arquivo criado StoreUpdateNome em /app/Http/Requests
 php artisan make:request StoreUpdateNometabela
+################## FIM Passos basicos criar um CRUD
