@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Cadastrar novo Perfil')
+@section('title', 'Cadastrar nova Permissão')
 
 @section('content_header')
     <h1>Cadastrar Permissão:</h1>
