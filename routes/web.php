@@ -5,13 +5,16 @@ use App\Http\Controllers\Admin\{
     DetailPlanController,
     PlanController
 };
+
 use App\Http\Controllers\Admin\ACL\PermissionController;
 use App\Http\Controllers\Admin\ACL\PermissionProfileController;
 use App\Http\Controllers\Admin\ACL\PlanProfileController;
 use App\Http\Controllers\Admin\ACL\ProfileController;
 use App\Http\Controllers\Admin\ACL\ProfilePermissionController;
 
-Route::prefix('admin')->group(function(){
+Route::prefix('admin')
+        ->middleware('auth')
+        ->group(function(){
 
     /**
      * Plan x Profile
@@ -80,7 +83,15 @@ Route::prefix('admin')->group(function(){
     Route::get('/', [PlanController::class, 'index'])->name('admin.index');
 });
 
+/**
+ * Auth Routes
+ */
+//Auth::routes();
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+require __DIR__.'/auth.php';
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

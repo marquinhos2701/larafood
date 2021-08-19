@@ -16,7 +16,7 @@ class PlanProfileController extends Controller
         $this->plan = $plan;
         $this->profile = $profile;
 
-        $this->middleware(['can:plans']);
+        //$this->middleware(['can:plans']);
     }
 
     public function profiles($idPlan)
@@ -30,9 +30,9 @@ class PlanProfileController extends Controller
         return view('admin.pages.plans.profiles.profiles', compact('plan', 'profiles'));
     }
 
+
     public function plans($idProfile)
     {
-        dd($idProfile);
         if (!$profile = $this->profile->find($idProfile)) {
             return redirect()->back();
         }
